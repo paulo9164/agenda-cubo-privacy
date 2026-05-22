@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Política de Privacidade — Agenda Cubo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #06060F;
+      --surface: #13131F;
+      --border: rgba(232,255,71,0.15);
+      --accent: #E8FF47;
+      --text: #ffffff;
+      --muted: rgba(255,255,255,0.5);
+      --dimmed: rgba(255,255,255,0.12);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 48px 32px 32px;
+      border-bottom: 1px solid var(--dimmed);
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .logo-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(232,255,71,0.12);
+      border: 1px solid rgba(232,255,71,0.3);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .logo-name {
+      font-family: 'Space Mono', monospace;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 2px;
+    }
+
+    h1 {
+      font-family: 'Space Mono', monospace;
+      font-size: clamp(22px, 4vw, 32px);
+      font-weight: 700;
+      letter-spacing: 1px;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .updated {
+      display: inline-block;
+      margin-top: 16px;
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      color: var(--accent);
+      background: rgba(232,255,71,0.08);
+      border: 1px solid rgba(232,255,71,0.2);
+      border-radius: 20px;
+      padding: 4px 12px;
+      letter-spacing: 1px;
+    }
+
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 32px 80px;
+    }
+
+    section {
+      margin-bottom: 48px;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.5s ease forwards;
+    }
+
+    section:nth-child(1)  { animation-delay: 0.05s; }
+    section:nth-child(2)  { animation-delay: 0.10s; }
+    section:nth-child(3)  { animation-delay: 0.15s; }
+    section:nth-child(4)  { animation-delay: 0.20s; }
+    section:nth-child(5)  { animation-delay: 0.25s; }
+    section:nth-child(6)  { animation-delay: 0.30s; }
+    section:nth-child(7)  { animation-delay: 0.35s; }
+    section:nth-child(8)  { animation-delay: 0.40s; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: none; }
+    }
+
+    .section-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--accent);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-family: 'Space Mono', monospace;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 12px;
+    }
+
+    ul {
+      list-style: none;
+      margin: 12px 0;
+    }
+
+    ul li {
+      font-size: 15px;
+      color: rgba(255,255,255,0.75);
+      padding: 8px 0 8px 20px;
+      border-bottom: 1px solid var(--dimmed);
+      position: relative;
+    }
+
+    ul li:last-child { border-bottom: none; }
+
+    ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.6;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      margin-top: 8px;
+    }
+
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid rgba(232,255,71,0.25);
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .contact-card .company {
+      font-family: 'Space Mono', monospace;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 1px;
+    }
+
+    .contact-card a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .contact-card a:hover { color: var(--accent); }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      padding: 32px;
+      border-top: 1px solid var(--dimmed);
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 1px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 600px) {
+      header, main { padding-left: 20px; padding-right: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-row">
+    <div class="logo-icon">📅</div>
+    <span class="logo-name">AGENDA CUBO</span>
+  </div>
+  <h1>Política de Privacidade</h1>
+  <p class="subtitle">CuboMágicoDesign — aplicação de gestão de diretos ao vivo</p>
+  <span class="updated">ATUALIZADO EM MAIO DE 2025</span>
+</header>
+
+<main>
+
+  <section>
+    <div class="section-label">01 — Introdução</div>
+    <h2>Quem somos</h2>
+    <div class="card">
+      <p>A <strong style="color:#fff">Agenda Cubo</strong> é uma aplicação desenvolvida pela <strong style="color:#fff">CuboMágicoDesign</strong> destinada à gestão e agendamento de diretos ao vivo. Esta política descreve de forma clara quais os dados que recolhemos, como os utilizamos e como os protegemos.</p>
+      <p style="margin-bottom:0">Ao utilizar a Agenda Cubo, aceita os termos descritos nesta política.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">02 — Dados Recolhidos</div>
+    <h2>O que recolhemos</h2>
+    <p>A aplicação recolhe apenas os dados estritamente necessários para o seu funcionamento:</p>
+    <ul>
+      <li><strong>Nome do cliente</strong> — utilizado para identificar e organizar os diretos agendados</li>
+      <li><strong>Data e hora dos diretos</strong> — informação necessária para o agendamento</li>
+      <li><strong>Token FCM (Firebase Cloud Messaging)</strong> — utilizado exclusivamente para o envio de notificações push ao administrador</li>
+      <li><strong>Identificador anónimo de sessão</strong> — gerado automaticamente pelo Firebase Authentication para autenticar o utilizador sem recolher dados pessoais identificáveis</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="section-label">03 — Finalidade</div>
+    <h2>Como utilizamos os dados</h2>
+    <p>Os dados recolhidos são utilizados exclusivamente para:</p>
+    <ul>
+      <li>Gerir e apresentar os diretos agendados na aplicação</li>
+      <li>Enviar notificações push ao administrador quando um novo direto é agendado ou alterado</li>
+      <li>Autenticar os utilizadores de forma segura e anónima</li>
+    </ul>
+    <p>Os seus dados <strong style="color:#fff">nunca são</strong> vendidos, partilhados com terceiros para fins comerciais, ou utilizados para publicidade.</p>
+  </section>
+
+  <section>
+    <div class="section-label">04 — Armazenamento</div>
+    <h2>Onde os dados são guardados</h2>
+    <div class="card">
+      <p>Os dados são armazenados na plataforma <strong style="color:#fff">Google Firebase (Firestore)</strong>, com servidores localizados na Europa (região <code style="color:var(--accent);font-size:13px">eur3</code>). O Google Firebase cumpre o Regulamento Geral de Proteção de Dados (RGPD).</p>
+      <p style="margin-bottom:0">Para mais informações sobre as práticas de privacidade do Firebase, consulte a <a href="https://firebase.google.com/support/privacy" target="_blank">política de privacidade do Firebase</a>.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">05 — Retenção</div>
+    <h2>Durante quanto tempo guardamos os dados</h2>
+    <ul>
+      <li>Os diretos agendados são automaticamente eliminados após a sua realização</li>
+      <li>Os dados de clientes são mantidos enquanto a conta estiver ativa na aplicação</li>
+      <li>Os tokens FCM são eliminados quando o administrador termina sessão</li>
+      <li>Os identificadores anónimos de sessão são eliminados automaticamente após 15 dias de inatividade</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="section-label">06 — Direitos</div>
+    <h2>Os seus direitos</h2>
+    <p>Ao abrigo do RGPD, tem direito a:</p>
+    <ul>
+      <li>Aceder aos seus dados pessoais</li>
+      <li>Solicitar a correção de dados incorretos</li>
+      <li>Solicitar a eliminação dos seus dados</li>
+      <li>Opor-se ao tratamento dos seus dados</li>
+    </ul>
+    <p>Para exercer qualquer um destes direitos, entre em contacto connosco através do endereço indicado abaixo.</p>
+  </section>
+
+  <section>
+    <div class="section-label">07 — Menores</div>
+    <h2>Utilização por menores</h2>
+    <div class="card">
+      <p style="margin-bottom:0">A Agenda Cubo não é destinada a menores de 13 anos e não recolhe intencionalmente dados de crianças. Se tiver conhecimento de que uma criança nos forneceu dados pessoais, contacte-nos imediatamente.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">08 — Contacto</div>
+    <h2>Fale connosco</h2>
+    <p>Para questões relacionadas com esta política ou com o tratamento dos seus dados:</p>
+    <div class="contact-card">
+      <span class="company">CUBO MÁGICO DESIGN</span>
+      <a href="mailto:geral@cubomagicodesign.pt">geral@cubomagicodesign.pt</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2025 CUBOMAGICODESIGN — AGENDA CUBO — TODOS OS DIREITOS RESERVADOS
+</footer>
+
+</body>
+</html>
+```
