@@ -109,6 +109,79 @@
     section:nth-child(6)  { animation-delay: 0.30s; }
     section:nth-child(7)  { animation-delay: 0.35s; }
     section:nth-child(8)  { animation-delay: 0.40s; }
+    section:nth-child(9)  { animation-delay: 0.45s; }
+    section:nth-child(10) { animation-delay: 0.50s; }
+
+    .delete-card {
+      background: rgba(255, 75, 75, 0.06);
+      border: 1px solid rgba(255, 75, 75, 0.25);
+      border-radius: 16px;
+      padding: 28px;
+      margin-top: 8px;
+    }
+
+    .delete-card h3 {
+      font-family: 'Space Mono', monospace;
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .delete-card p {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .delete-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #000;
+      font-family: 'Space Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 12px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .delete-btn:hover {
+      opacity: 0.85;
+      text-decoration: none;
+    }
+
+    .delete-steps {
+      margin-top: 16px;
+      counter-reset: steps;
+    }
+
+    .delete-steps li {
+      counter-increment: steps;
+      border-bottom: 1px solid rgba(255,75,75,0.15);
+      padding-left: 32px;
+    }
+
+    .delete-steps li::before {
+      content: counter(steps);
+      background: rgba(255,75,75,0.2);
+      color: #ff6b6b;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-family: 'Space Mono', monospace;
+      font-weight: 700;
+      top: 50%;
+      transform: translateY(-50%);
+    }
 
     @keyframes fadeUp {
       to { opacity: 1; transform: none; }
@@ -315,7 +388,33 @@
   </section>
 
   <section>
-    <div class="section-label">08 — Contacto</div>
+    <div class="section-label">08 — Eliminação de Dados</div>
+    <h2>Pedir eliminação dos seus dados</h2>
+    <div class="delete-card">
+      <h3>Como pedir a eliminação</h3>
+      <p>Pode solicitar a eliminação de todos os seus dados pessoais a qualquer momento. O pedido será processado no prazo de 30 dias.</p>
+      <a class="delete-btn" href="mailto:geral@cubomagicodesign.pt?subject=Pedido%20de%20Elimina%C3%A7%C3%A3o%20de%20Dados%20%E2%80%94%20Agenda%20Cubo&body=Ol%C3%A1%2C%0A%0AVenho%20solicitar%20a%20elimina%C3%A7%C3%A3o%20de%20todos%20os%20meus%20dados%20pessoais%20associados%20%C3%A0%20aplica%C3%A7%C3%A3o%20Agenda%20Cubo.%0A%0ANome%3A%20%5Bseu%20nome%5D%0A%0AObrigado.">
+        ✉ Enviar pedido de eliminação
+      </a>
+      <ul class="delete-steps">
+        <li>Clique no botão acima para abrir um email pré-preenchido</li>
+        <li>Adicione o seu nome no campo indicado</li>
+        <li>Envie o email — responderemos em até 30 dias</li>
+      </ul>
+    </div>
+    <p style="margin-top:16px; font-size:13px; color:rgba(255,255,255,0.4)">Os dados eliminados incluem: nome, diretos agendados e token de notificações. O identificador anónimo de sessão é eliminado automaticamente após 15 dias de inatividade.</p>
+  </section>
+
+  <section>
+    <div class="section-label">09 — Menores</div>
+    <h2>Utilização por menores</h2>
+    <div class="card">
+      <p style="margin-bottom:0">A Agenda Cubo não é destinada a menores de 13 anos e não recolhe intencionalmente dados de crianças. Se tiver conhecimento de que uma criança nos forneceu dados pessoais, contacte-nos imediatamente.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">10 — Contacto</div>
     <h2>Fale connosco</h2>
     <p>Para questões relacionadas com esta política ou com o tratamento dos seus dados:</p>
     <div class="contact-card">
